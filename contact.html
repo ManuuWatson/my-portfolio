@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="image/logo.png" alt="MY logo">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="about.html#skills">SKILLS</a></li>
+                <li><a href="contact.html">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+    
+  <!-- Contact Container -->
+  <div class="contact-container">
+    <h2>Let's Connect</h2>
+    <p>Feel free to reach out via any of the options below.</p>
+    
+    <!-- Contact Info Links -->
+    <div class="contact-info">
+      <a href="https://wa.me/254718074415" class="whatsapp" target="_blank">WhatsApp: +254 718 074415</a>
+      <a href="sms:+254718074415" class="sms">Send an SMS</a>
+      <a href="tel:+254718074415" class="call">Call Me</a>
+      <a href="mailto:emmanuelkipngeno08@gmail.com" class="email">Email Me</a>
+    </div>
+    
+    <!-- Social Icons -->
+    <h3 style="margin-top: 30px; color: #00f7ff;">Follow Me</h3>
+    <div class="social-icons">
+      <a href="https://wa.me/254718074415" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100080311042002" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/ekipngeno71321" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/emmanuel-kipngeno-ab0024356" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ManuuWatson" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</body>
+</html>
