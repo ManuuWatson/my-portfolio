@@ -60,26 +60,21 @@ nav ul li a:hover {
     gap: 5px;
 }
 
-/* "I'm a" text remains white */
-.hero-text span:first-child {
-    color: white;
-}
-
-/* Typed text sho`  uld be cyan */
-#typed-text {
+/* Hero Role & Tagline */
+.hero-role {
+    font-size: 32px;
     color: #00f7ff;
+    font-weight: bold;
+    margin: 10px 0 0 0;
 }
 
-/* Cursor blinking effect */
-.cursor {
-    color: #00f7ff;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+.hero-text p.hero-tagline {
+    font-size: 18px;
+    font-weight: normal;
+    color: #d1d5db;
+    margin: 12px 0 0 0;
+    line-height: 1.6;
+    max-width: 550px;
 }
 
 /* Headings */
