@@ -25,7 +25,8 @@ body {
 }
 
 body.menu-open {
-    overflow: hidden;
+    /* Prevent backdrop bounce while preserving sticky header positioning */
+    touch-action: pan-y;
 }
 
 img,
@@ -1616,12 +1617,14 @@ body {
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 62px;
     left: 0;
     right: 0;
     width: 100%;
     max-width: 100%;
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
     background: rgba(10, 14, 23, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -2129,6 +2132,8 @@ body {
     min-height: 58px;
   }
   .nav-links {
+    top: 58px;
+    max-height: calc(100vh - 58px);
     padding: 14px 16px 20px;
     border-radius: 0 0 14px 14px;
     gap: 6px;

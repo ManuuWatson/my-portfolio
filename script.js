@@ -33,6 +33,14 @@ function openMenu() {
         navOverlay.classList.add('show');
     }
     document.body.classList.add('menu-open');
+
+    // Smoothly scroll to the top of the page so the user sees the page header and menu cleanly
+    if (window.scrollY > 0) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 }
 
 function closeMenu() {
