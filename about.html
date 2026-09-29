@@ -38,201 +38,191 @@
   </script>
   
 
-  <!-- About Banner Section -->
-  <!-- About Banner Section with Image and Text Overlay -->
-<section class="about-banner">
-    <img src="image/about profile.jpg" alt="Banner Image" class="banner-image">
-    <div class="banner-overlay">
-      <h1>About Me</h1>
+  <!-- About Hero / Banner Section -->
+  <section class="about-banner about-hero">
+    <div class="banner-hero">
+      <img src="image/about profile.jpg" alt="Banner Image" class="banner-image" />
+      <div class="banner-overlay">
+        <h1>About Me</h1>
+      </div>
+    </div>
+
+    <!-- Profile Sidebar (contained inside Hero Section on Desktop) -->
+    <div class="sidebar">
+      <!-- Sticky Profile Info Section -->
+      <div class="profile-info sticky">
+        <img src="image/my-profile.jpg" alt="Profile Picture" class="profile-pic" />
+        <h2>Emmanuel Kipngeno</h2>
+        <p class="role">Frontend Developer | Full-Stack Developer | Web Designer</p>
+      </div>
+
+      <!-- Scrollable Sidebar Content -->
+      <div class="sidebar-content">
+        <!-- Personal Info -->
+        <div class="info">
+          <p><strong>Residence:</strong> Kenya</p>
+          <p><strong>City:</strong> Nairobi</p>
+        </div>
+
+        <!-- Languages -->
+        <div class="languages">
+          <h3>Spoken Languages</h3>
+          <div class="language-container">
+            <!-- English -->
+            <div class="language-item">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="78, 100"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">78%</text>
+              </svg>
+              <span class="language-name">English</span>
+            </div>
+              
+            <!-- Kiswahili -->
+            <div class="language-item">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="88, 100"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">88%</text>
+              </svg>
+              <span class="language-name">Kiswahili</span>
+            </div>
+        
+            <!-- Kipsigis -->
+            <div class="language-item">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="91, 100"
+                  d="M18 2.0845
+                     a 15.9155 15.9155 0 0 1 0 31.831
+                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">91%</text>
+              </svg>
+              <span class="language-name">Kipsigis</span>
+            </div>
+        
+          </div>
+        </div>
+        
+        <!-- Expertise and Competencies -->
+        <div class="expertise">
+          <h3>Expertise and Competencies</h3>
+          <div class="skill">
+            <label>Frontend Development</label>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>WordPress Development</label>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>AI & Intelligent Solutions</label>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <label>Web & Software Development</label>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools I Use Section -->
+        <div class="tools-used">
+          <h3>Tools I Use</h3>
+          <div class="tools-icons">
+            <div class="tool">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="tool">
+              <i class="fas fa-database"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-docker"></i>
+              <span>Docker</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="tool">
+              <i class="fab fa-wordpress"></i>
+              <span>WordPress</span>
+            </div>
+            <div class="tool">
+              <i class="fas fa-chart-line"></i>
+              <span>Data Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://wa.me/254718074415" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100080311042002/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/emmanuel-kipngeno-ab0024356/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/ManuuWatson/" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
     </div>
   </section>
-  
-
-  <div class="sidebar">
-    <!-- Sticky Profile Info Section -->
-    <div class="profile-info sticky">
-      <img src="image/my-profile.jpg" alt="Profile Picture" class="profile-pic" />
-      <h2>Emmanuel Kipngeno</h2>
-      <p class="role">Frontend Developer | Full-Stack Developer | Web Designer</p>
-    </div>
-
-    
-  
-    <!-- Scrollable Sidebar Content -->
-     
-    <div class="sidebar-content">
-      <!-- Personal Info -->
-      <div class="info">
-        <p><strong>Residence:</strong> Kenya</p>
-        <p><strong>City:</strong> Nairobi</p>
-      </div>
-  
-      <!-- Languages -->
-      <div class="languages">
-        <h3>Spoken Languages</h3>
-        <div class="language-container">
-
-          <!-- English -->
-          <div class="language-item">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <path
-                class="circle-bg"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path
-                class="circle"
-                stroke-dasharray="85, 100"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <text x="18" y="20.35" class="percentage">78%</text>
-            </svg>
-            <span class="language-name">English</span>
-          </div>
-            
-          <!-- Kiswahili -->
-          <div class="language-item">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <!-- Background circle -->
-              <path
-                class="circle-bg"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <!-- Progress circle (8%4) -->
-              <path
-                class="circle"
-                stroke-dasharray="88, 100"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <!-- Percentage text -->
-              <text x="18" y="20.35" class="percentage">88%</text>
-            </svg>
-            <span class="language-name">English</span>
-          </div>
-      
-          <!--kipsigis -->
-          <div class="language-item">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <path
-                class="circle-bg"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path
-                class="circle"
-                stroke-dasharray="92, 100"
-                d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <text x="18" y="20.35" class="percentage">91%</text>
-            </svg>
-            <span class="language-name">kipsigis</span>
-          </div>
-      
-        </div>
-      </div>
-      
-  
-      <!-- Expertise and Competencies -->
-      <div class="expertise">
-        <h3>Expertise and Competencies</h3>
-        <div class="skill">
-          <label>Frontend Development</label>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 85%;"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <label>WordPress Development</label>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 75%;"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <label>AI & Intelligent Solutions</label>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 70%;"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <label>Web & Software Development</label>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 80%;"></div>
-          </div>
-        </div>
-      </div>
-
-
-         <!-- Tools I Use Section -->
-<div class="tools-used">
-  <h3>Tools I Use</h3>
-  <div class="tools-icons">
-    <div class="tool">
-      <i class="fab fa-react"></i>
-      <span>React</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-html5"></i>
-      <span>HTML5</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-css3-alt"></i>
-      <span>CSS3</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-js"></i>
-      <span>JavaScript</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-python"></i>
-      <span>Python</span>
-    </div>
-    <div class="tool">
-      <i class="fas fa-database"></i>
-      <span>PostgreSQL</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-docker"></i>
-      <span>Docker</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-git-alt"></i>
-      <span>Git</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-github"></i>
-      <span>GitHub</span>
-    </div>
-    <div class="tool">
-      <i class="fab fa-wordpress"></i>
-      <span>WordPress</span>
-    </div>
-    <div class="tool">
-      <i class="fas fa-chart-line"></i>
-      <span>Data Analysis</span>
-    </div>
-  </div>
-</div>
-<div class="social-icons">
-  <a href="https://wa.me/254718074415" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.facebook.com/profile.php?id=100080311042002/" target="_blank"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.linkedin.com/in/emmanuel-kipngeno-ab0024356/" target="_blank"><i class="fab fa-linkedin"></i></a>
-  <a href="https://github.com/ManuuWatson/" target="_blank"><i class="fab fa-github"></i></a>
-</div>
-</div>
-
-      </div>
-    </div>
-  </div>
   
   
   <!-- About Content Section -->
@@ -368,5 +358,6 @@
       <p>&copy; 2025 Emmanuel Kipngeno. All rights protected.</p>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

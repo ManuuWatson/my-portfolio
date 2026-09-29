@@ -1,13 +1,50 @@
-/* General Styling */
+/* ==========================================================================
+   Global Reset & Box Sizing
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #111;
     color: white;
+    width: 100%;
+    overflow-x: clip;
+    position: relative;
 }
 
-/* Navigation Bar */
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   Header & Navigation Bar (Sticky)
+   ========================================================================== */
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
 nav {
     height: 60px; /* Adjust height as needed */
     display: flex;
@@ -15,6 +52,7 @@ nav {
     align-items: center;
     padding: 0 50px;
     background: black;
+    position: relative;
 }
 
 .logo img {
@@ -49,6 +87,8 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     height: 80vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .hero-text {
@@ -205,6 +245,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .about-container {
@@ -568,20 +610,15 @@ header {
     color: #ccc;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
 /* About Section */
-.about {
+.about,
+.plain-about {
     padding: 80px 50px;
     background-color: #111;
     color: white;
-  }
+    overflow: hidden;
+    position: relative;
+}
   .about-container {
     display: flex;
     gap: 50px;
@@ -697,130 +734,153 @@ header {
   }
 /* About Banner Section */
 .about-banner {
-    position: relative;
-    height: 500px; /* Adjust as needed */
-    overflow: hidden;
-  }
-  
-  .banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit:cover; /* Ensures the image covers the banner area */
-  }
-  
-  .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .banner-overlay h1 {
-    color: #00f7ff;
-    font-size: 48px;
-    margin: 0;
-    text-align: center;
-  }
-  
-  .about-banner {
-    position: relative;
-    height: 500px; /* Adjust as needed */
-    overflow: hidden;
-}
-  
-.banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the banner area */
-}
-  
-.banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 238, 255, 0.432); /* Reduced opacity for a cooler effect */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-  
-.banner-overlay h1 {
-    color: white; /* Overlay text changed to white */
-    font-size: 48px;
-    margin: 0;
-    text-align: center;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
 }
 
-/* Sidebar Container */
+.about-banner.about-hero {
+  height: 620px;
+}
+
+.banner-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 238, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero .banner-overlay {
+  justify-content: center;
+  padding-left: 380px; /* Shift title away from left sidebar on desktop */
+}
+
+.banner-overlay h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Sidebar Container (Desktop: strictly contained within hero section) */
 .sidebar {
-    position: absolute;
-    top: 100px;           /* Ensure it's not too high */
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  left: 40px;
+  width: 380px;
+  height: calc(100% - 50px);
+  max-height: calc(100% - 50px);
+  background: rgba(17, 17, 17, 0.95);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  z-index: 5;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 247, 255, 0.2);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky Profile Info Section */
+.profile-info.sticky {
+  position: sticky;
+  top: 0;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  z-index: 6;
+  border: 1px solid rgba(0, 247, 255, 0.15);
+}
+
+/* Profile Picture */
+.profile-info .profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2px solid #00f7ff;
+}
+
+/* Name and Role */
+.profile-info h2 {
+  font-size: 20px;
+  margin: 6px 0;
+  color: white;
+}
+
+.profile-info .role {
+  font-size: 13px;
+  color: #00f7ff;
+  margin: 0;
+}
+
+.sidebar-content {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #00f7ff rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: #00f7ff;
+  border-radius: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #00d0d0;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-banner.about-hero {
+    height: 600px;
+  }
+  .sidebar {
     left: 20px;
-    width: 400px;        /* Increased width for a more spacious look */
-    height: calc(85% - 50px);  /* Fill available vertical space */
-    background: rgba(17, 17, 17, 0.95); /* Dark background with slight transparency */
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 10px; /* Rounded corners for overall sidebar */
-    z-index: 3;          /* Sits above the overlay */
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
+    width: 320px;
   }
-  
-  /* Sticky Profile Info Section */
-  .profile-info.sticky {
-    position: sticky;
-    top: 0;
-    background: #1a1a1a;  /* Slightly lighter than the main sidebar background */
-    padding: 15px;
-    border-radius: 10px;  /* Rounded corners for the profile section */
-    text-align: center;
-    margin-bottom: 20px;
-    z-index: 4;           /* Higher than sidebar content */
+  .about-hero .banner-overlay {
+    padding-left: 330px;
   }
-  
-  /* Profile Picture */
-  .profile-info .profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+  .about-hero .banner-overlay h1 {
+    font-size: 38px;
   }
-  
-  /* Name and Role */
-  .profile-info h2 {
-    font-size: 20px;
-    margin: 10px 0;
-    color: white;
-  }
-  .profile-info .role {
-    font-size: 14px;
-    color: #aaa;
-    margin: 0;
-  }
-  
- 
-  .sidebar-content {
-    overflow-y: auto;
-    flex: 1;
-    direction: rtl;     /* Moves scrollbar to the left */
-    padding-left: 20px; /* Adds space from the left edge (scrollbar side) */
-    padding-right: 5px; /* Keeps a little space on the right, if needed */
-  }
-  
-  .sidebar-content > * {
-    direction: ltr;     /* Ensures inner content remains left-to-right */
-  }
+}
   
   
   /* Personal Info */
@@ -1336,90 +1396,9 @@ body {
   transform: scale(1.2);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  /* Header Adjustments */
-  header {
-    padding: 10px 20px;
-  }
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  /* Contact Container */
-  .contact-container {
-    width: 90%;
-    padding: 20px;
-    margin: 20px auto;
-  }
-  .contact-container h2 {
-    font-size: 24px;
-  }
-  
-  /* About Section */
-  .about-container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
-  .about-image, .about-text {
-    max-width: 100%;
-  }
-  .about-text h1 {
-    font-size: 28px;
-  }
-  .about-text p {
-    font-size: 14px;
-  }
-  
-  /* Projects Section */
-  .project-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .project-box {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .project-info h3 {
-    font-size: 20px;
-  }
-  .project-info p {
-    font-size: 14px;
-  }
-  
-  /* Skills Section */
-  .skills-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .skill-item {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .skill-item h3 {
-    font-size: 18px;
-  }
-  .skill-item p {
-    font-size: 14px;
-  }
-  
-  /* Adjust Buttons (if needed) */
-  .btn {
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-  
-  /* Social Icons */
-  .social-icons a {
-    font-size: 20px;
-    margin: 8px;
-  }
-}
-
-/* Hamburger Menu - Hidden on Desktop */
+/* ==========================================================================
+   Hamburger Menu (Desktop: Hidden)
+   ========================================================================== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1433,78 +1412,543 @@ body {
   border-radius: 2px;
 }
 
-/* Mobile Styles */
+/* ==========================================================================
+   Mobile & Tablet Responsiveness (<= 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 1. Header & Navigation */
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0;
+    background: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+  nav {
+    padding: 0 20px;
+    height: 55px;
+    min-height: 55px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .logo img {
+    max-width: 110px;
+    height: auto;
+  }
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
   .nav-links {
-    display: none; /* Hide nav-links by default */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    right: 0; /* Align to the right */
-    width: fit-content; /* Minimal width for content */
-    background: #222;
-    padding: 10px 20px; /* Small padding for appearance */
-    text-align: right; /* Align text to the right */
+    top: 100%;
+    right: 0;
+    width: 155px;
+    max-width: 55vw;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 8px 14px;
+    text-align: right;
+    box-shadow: -4px 8px 16px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 247, 255, 0.1);
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    border-top: none;
+    border-right: none;
+    border-bottom-left-radius: 8px;
+    z-index: 1000;
   }
   .nav-links.show {
     display: flex;
   }
   .nav-links li {
-    margin: 10px 0;
+    margin: 4px 0;
+    list-style: none;
   }
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
+  .nav-links li a {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: block;
+    padding: 3px 0;
+    color: #e5e7eb;
+    transition: color 0.2s ease;
+  }
+  .nav-links li a:hover,
+  .nav-links li a:active {
+    color: #00f7ff;
+  }
+
+  /* 2. Hero Section */
+  .hero {
+    flex-direction: column-reverse;
+    height: auto;
+    min-height: auto;
+    padding: 40px 20px;
+    overflow: hidden;
+    text-align: center;
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hero-text {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .hero-text h2 {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+  }
+  .hero-text h1 {
+    font-size: 30px;
+    line-height: 1.25;
+    margin: 0 0 8px 0;
+    word-break: break-word;
+  }
+  .hero-role {
+    font-size: 22px;
+    margin: 6px 0;
+    line-height: 1.3;
+  }
+  .hero-text p.hero-tagline {
+    font-size: 15px;
+    max-width: 100%;
+    margin: 10px 0 15px 0;
+    line-height: 1.5;
+  }
+  .hero-text .social-icons {
+    margin-top: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .hero-text .social-icons a {
+    margin: 0;
+  }
+  .hero-text .btn {
+    margin-top: 20px;
+  }
+  .hero-image {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+  .image-shape {
+    width: 85%;
+    height: 85%;
+    top: 8%;
+    left: 8%;
+    filter: blur(35px);
+  }
+
+  /* 3. About Section (Home Page) */
+  #about {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .about-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+  }
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .about-image-shape {
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    filter: blur(35px);
+  }
+  .about-text {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .about-text h1 {
+    font-size: 28px;
+  }
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* 4. Services Section */
+  .services {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .services h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .service-container {
+    width: 100%;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+  .service-box {
+    width: 100%;
+    max-width: 360px;
+    padding: 25px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* 5. Projects Section */
+  .projects {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .projects h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .project-container {
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .project-box {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+  .project-buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .project-buttons .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  /* 6. Call To Action (CTA) */
+  .cta {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cta h2 {
+    font-size: 26px;
+    word-break: break-word;
+  }
+  .cta p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  /* 7. Recommendations Section */
+  .recommendations {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .recommendations h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .recommendation-cards {
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .recommendation-card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  /* 8. About Page Specifics (about.html) */
+  .about-banner {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .about-banner.about-hero {
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+  .banner-hero {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .about-hero .banner-overlay {
+    padding-left: 0;
+    justify-content: center;
+  }
+  .banner-overlay h1 {
+    font-size: 28px;
+  }
+  .sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 20px auto;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+  .sidebar-content {
+    overflow-y: visible;
+    padding-right: 0;
+  }
+  .language-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .plain-about {
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+  .plain-about .about-container {
+    gap: 25px;
+  }
+  .plain-about .about-image img {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .education {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .education h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .education-container {
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .education-item {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .skills {
+    padding: 50px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .skills h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .skills-container {
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .skill-item {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* 9. Contact Page Specifics (contact.html) */
+  .contact-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 15px;
+    margin: 25px auto;
+    box-sizing: border-box;
+  }
+  .contact-container h2 {
+    font-size: 24px;
+  }
+  .contact-info a {
+    font-size: 14px;
+    padding: 10px;
+    word-break: break-word;
+  }
+
+  /* 10. Footer Section */
+  .footer {
+    padding: 40px 20px 20px 20px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .footer-column {
+    width: 100%;
+    max-width: 360px;
+    flex: none;
+    margin: 15px auto;
+    text-align: center !important;
+    box-sizing: border-box;
+  }
+  .footer-container .footer-column:nth-child(1),
+  .footer-container .footer-column:nth-child(2),
+  .footer-container .footer-column:nth-child(3) {
+    text-align: center;
+  }
+  .newsletter-form {
+    max-width: 100%;
+    width: 100%;
+    margin: 10px auto;
+    box-sizing: border-box;
+  }
+  .newsletter-form input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .social-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Devices (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  nav {
+    padding: 0 15px;
+    height: 52px;
+    min-height: 52px;
+  }
+  .nav-links {
+    width: 145px;
+    padding: 6px 12px;
+  }
+  .nav-links li {
+    margin: 3px 0;
+  }
+  .nav-links li a {
+    font-size: 12.5px;
+    padding: 2px 0;
   }
   .logo img {
-    width: 150px; /* Optionally reduce logo size on mobile */
+    max-width: 100px;
   }
-}
-
-/* Reduce gap below navigation */
-.nav-links {
-  padding-bottom: 10px;
-}
-
-/* Footer column adjustment */
-@media (max-width: 768px) {
-  .footer-column {
-    flex: none;
-    width: 100%;
-    margin: 10px 0;
+  .hero {
+    padding: 30px 15px 35px 15px;
   }
-}
-
-
-@media (max-width: 768px) { 
-  .about-image {
-      width: 100%; /* Increase width to take more space on small screens */
-      max-width: 500px; /* Adjust max size */
-      display: block; /* Ensure it doesn’t overflow */
-      margin: 0 auto; /* Center it */
+  .hero-text h1 {
+    font-size: 25px;
   }
-}
-
-@media (max-width: 480px) { 
-  .about-image {
-      width: 100%; /* Slightly larger for very small screens */
-      max-width: 300px; /* Limit max size */
+  .hero-text h2 {
+    font-size: 17px;
   }
-}
-
-
-@media (max-width: 768px) { 
-    .about-image img {
-        width: 100%; /* Reduce size on smaller screens */
-        max-width: 300px; /* Prevents it from being too large */
-        height: auto;
-        display: block; /* Ensures no overflow */
-        margin: 0 auto; /* Center the image */
-    }
-}
-
-@media (max-width: 480px) { 
-    .about-image img {
-        width: 100%; /* Further reduce size for extra small screens */
-        max-width: 200px; /* Maintain a proper limit */
-    }
+  .hero-role {
+    font-size: 19px;
+  }
+  .hero-text p.hero-tagline {
+    font-size: 14px;
+  }
+  .hero-image {
+    max-width: 210px;
+  }
+  #about,
+  .services,
+  .projects,
+  .recommendations,
+  .education,
+  .skills,
+  .cta,
+  .footer {
+    padding: 35px 15px;
+  }
+  .service-box,
+  .project-box,
+  .recommendation-card,
+  .education-item,
+  .skill-item {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
 }
