@@ -11,26 +11,29 @@
 
 <body>
 
-    <header>
+    <header id="header">
         <nav>
           <div class="logo">
-            <img src="image/logo.png" alt="MY logo">
+            <a href="index.html">
+              <img src="image/logo.png" alt="Emmanuel Kipngeno Logo">
+            </a>
           </div>
-          <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="about.html#skills">SKILLS</a></li>
-            <li><a href="contact.html">CONTACT ME</a></li>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> ABOUT</a></li>
+            <li><a href="#services"><i class="fas fa-laptop-code"></i> SERVICES</a></li>
+            <li><a href="projects.html"><i class="fas fa-briefcase"></i> PROJECTS</a></li>
+            <li><a href="about.html#skills"><i class="fas fa-code"></i> SKILLS</a></li>
+            <li><a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> CONTACT ME</a></li>
           </ul>
-          <div class="hamburger">
+          <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </nav>
       </header>
+      <div class="nav-overlay" id="nav-overlay"></div>
       
     <section class="hero">
         <div class="hero-text">
@@ -46,8 +49,7 @@
                 <a href="https://www.linkedin.com/in/emmanuel-kipngeno-ab0024356/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/ManuuWatson/" target="_blank"><i class="fab fa-github"></i></a>
             </div>
-            
-            <a href="file/EMMANUEL KIPNGENO cv (1).pdf" class="btn">DOWNLOAD CV</a>
+            <a href="document/cv Emmanuel Kipngeno.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf"></i> DOWNLOAD CV</a>
         </div>
         
         <div class="hero-image">
